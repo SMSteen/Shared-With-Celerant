@@ -1,0 +1,63 @@
+.product-card-overlay {
+    background-color: rgba(37, 37, 37, 0.5);
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+    top: 20px;
+    left: 0;
+    display: none;
+    border-radius: 8px;
+}
+.product-card-overlay .btn {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+    transform: translateY(-45%);
+    transition: all 0.15s ease-in;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #23527c;
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+}
+
+/* testing modal display upon selecting CTA button */
+#myProductModal .modal-body, #quoteModal .modal-body, #calculatorModal .modal-body {
+    padding: 40px;
+}
+#myProductModal .modal-body .btn-success {
+    background-color: #00683f;
+    color: white;
+    font-weight: bold;
+}
+#myProductModal .modal-body .btn-primary {
+    background-color: #002244;
+    color: white;
+    font-weight: bold;
+}
+#myProductModal .modal-body img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Modal Close Button */
+.modal-body .close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.modal-body .close:hover,
+.modal-body .close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
