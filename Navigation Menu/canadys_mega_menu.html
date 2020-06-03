@@ -1,735 +1,1138 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="desktop">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title> :Canady's Sport Center</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/theme-style.css">
+    <link rel="stylesheet" href="css/ie.style.css">
+    <link rel='stylesheet' href='css/main.css'>
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <!--[if IE 7]>
+          <link rel="stylesheet" href="css/font-awesome-ie7.css">
+        <![endif]-->
+    <script src="js/vendor/modernizr.js"></script>
+    <!--[if IE 8]><script src="js/vendor/less-1.3.3.js"></script><![endif]-->
+    <!--[if gt IE 8]><!-->
+    <script src="js/vendor/less.js"></script>
+    <!--<![endif]-->
+    <script
+        type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+
+
+    <link rel="stylesheet" href="css/style_green.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/default.css" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/swiper.min.js" type="text/javascript"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/sliders.js" type="text/javascript"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.accordion.css">
+
+    <link rel="stylesheet" href="css/sms-custom/general.css">
+    <link rel="stylesheet" href="css/sms-custom/headerFooter.css">
+    <link rel="stylesheet" href="css/sms-custom/banners.css">
+    <link rel="stylesheet" href="css/sms-custom/brands-carousel.css">
+    <link rel="stylesheet" href="css/sms-custom/buttons.css">
+    <!-- <link rel="stylesheet" href="css/sms-custom/myCustom.css"> -->
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #002244;
-            padding: 15px;
-        }
-        header img {
-            width: 75px;
-        }
-
-        /* Navbar container */
-        nav {
-            overflow: hidden;
-            /* background-color: #333; */
-            font-family: Arial;
-            color: white;
-        }
-
-        /* Links inside the navbar */
-        nav a {
-            float: left;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        /* The dropdown container */
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-
-        /* Dropdown button */
-        .dropdown .dropbtn {
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font: inherit; /* Important for vertical align on mobile phones */
-            margin: 0; /* Important for vertical align on mobile phones */
-        }
-
-        /* Add a red background color to navbar links on hover */
-        .navbar a:hover,
-        .dropdown:hover .dropbtn {
-            background-color: red;
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
+        #rotatorContainer {
             position: absolute;
-            background-color: #f9f9f9;
-            width: 80%;
-            left: 130px;
-            top: 50px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            top: 50%;
+            left: 50%;
+            margin: -274px 0 0 -400px;
+            background-color: #fff;
+            z-index: 100001;
         }
 
-        /* Mega Menu header, if needed */
-        .dropdown-content h3 {
-            /* background: red; */
-            /* padding: 16px; */
-            border-bottom: 2px solid #689cca;
-            color: #002244;
-            margin-bottom: 5px;
+        #rotatorExit {
+            cursor: pointer;
+            display: inline-block;
+            opacity: 1;
+            position: absolute;
+            top: 3px;
+            right: 3px;
         }
 
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Create three equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 23%;
-            padding: 10px;
-            vertical-align: top;
-            /* background-color: #ccc; */
-            /* height: 250px; */
-        }
-
-        /* Style links inside the columns */
-        .column a {
-            float: none;
-            color: #002244;
-            padding: 0px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        /* Add a background color on hover */
-        .column a:hover {
-            /* background-color: #ddd; */
-            background-color: #689cca;
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 600px) {
-        .column {
+        #rotatorModal {
+            background-color: rgba(0, 0, 0, .7);
+            position: absolute;
+            top: 0px;
             width: 100%;
-            height: auto;
-        }
-        }
-        .question {
-            background-color: yellow;
-        }
-        .custom-menu-option-with-subs:hover {
-            background-color: #689cca;
-            font-weight: bold;
-        }
-        .custom-menu-option-with-subs::after {
-            content: " \25B6";
-            color: #689cca;
+            height: 100%;
+            z-index: 10000;
         }
     </style>
+
+	<style>
+		.nav-level-1 {
+			position: static !important;
+		}
+		.nav-level-2 {
+			margin-left: 16px;
+			margin-right: 16px;
+			padding: 20px 0px;
+		}
+		.nav-level-2 > li > ul {
+			padding: 0;
+			margin: 0 0 10px 0;
+		}
+		.nav-level-2 > li > ul > li {
+			list-style: none;
+		}
+		.nav-level-2 > li > ul > li > a {
+			display: block;
+			padding: 2px 0;
+			clear: both;
+			font-weight:300;
+			line-height: 1.3;
+			color: #002244;
+			white-space: normal;
+			font-size: 1em;
+		}
+		.nav-level-2 > li ul > li > a:hover,
+		.nav-level-2 > li ul > li > a:focus {
+			text-decoration: none;
+			color: #fff;
+			background-color: #669cca;
+			font-weight: bold;
+		}
+		.nav-level-2 {
+			width: 80vw;
+			top: 45px;
+			left: -65px;
+			flex-flow: row wrap;
+		}
+		.nav-level-2 .nav-level-3 {
+			width: 20%;
+		}
+		.nav-level-2 .dropdown-header {
+			color: #002244;
+			font-size: 1.2em;
+			margin: 0;
+			padding: 0;
+			border-bottom: 1.5px solid #689cca;
+		}
+
+		@media (max-width: 1024px) {
+			.nav-level-2 .nav-level-3 {
+				width: 30%;
+			}
+		}
+
+		@media(max-width: 990px) {
+			.navbar-default .navbar-nav > li > a, .affix .navbar-default .navbar-nav > li > a {
+				color: #002244;
+			}
+			.nav-level-2 {
+				position: relative;
+				left: 0;
+				top: 0;
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.nav-level-2 {
+				margin-left: 0 ;
+				margin-right: 0 ;
+			}
+			.nav-level-2 > li {
+				margin-bottom: 10px;
+			}
+			.nav-level-2 > li:last-child {
+				margin-bottom: 0;
+			}
+			.nav-level-2 .dropdown-header {
+				padding: 3px 0 !important;
+			}
+			.nav-level-2 {
+				left: -10px;
+			}
+			.nav-level-2 .nav-level-3 {
+				width: 100%;
+			}
+			.nav-level-2 > li > ul {
+				margin: 0;
+			}
+			.nav-level-2 > li > ul > li > a {
+				font-size: 1.2em;
+			}
+			.affix-top, .navbar-collapse.collpase.in {
+				width: 100%;
+			}
+			
+		}
+	</style>
+
 </head>
+
 <body>
+
     <header>
-        <nav>
-            <a href="#">
-                <img src="../site_design/images/logos/canadys_boat_logo_transparent_white.png"
-                    alt="Canady's Sport Center Logo">
-            </a>
-            <div class="dropdown">
-                <a href="#">Clothing</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3><a href="#">Men's Clothing</a></h3>
-                            <a href="#">Pants & Shorts</a>
-                            <a href="#">Shirts & Tops</a>
-                            <a href="#">Coats & Jackets</a>
-                            <a href="#">Hoodies & Sweatshirts</a>
-                            <a href="#">Base Layers</a>
-                            <a href="#">Vests</a>
-                            <a href="#">Fleece</a>
-                            <a href="#">Rainwear</a>
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Canady's</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Women's Clothing</a></h3>
-                            <a href="#">Pants & Shorts</a>
-                            <a href="#">Skirts & Dresses</a>
-                            <a href="#">Shirts & Tops</a>
-                            <a href="#">Coats & Jackets</a>
-                            <a href="#">Hoodies & Sweatshirts</a>
-                            <a href="#">Base Layers</a>
-                            <a href="#">Vests</a>
-                            <a href="#">Fleece</a>
-                            <a href="#">Rainwear</a>
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Canady's</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Kids' Clothing</a></h3>
-                            <a href="#">Shirts & Tops</a>
-                            <a href="#">Coats & Jackets</a>
-                            <a href="#">Hoodies & Sweatshirts</a>
-                            <a href="#">Base Layers</a>
-                            <a href="#">Fleece</a>
-                            <a href="#">Rainwear</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Canady's</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Pets' Clothing</a></h3>
-                            <a href="#">Vests & Sweaters</a>
-                            <a href="#">Leashes</a>
-                            <a href="#">Collars</a>
-                        </div>
+        <div id="topbar" class=" col-md-12">
+            <div class="col-lg-6 store-info">
+                <p><a href="javascript:;">+</a><b><a href="tel:9107916280">910-791-6280</a></b></p>
+            </div>
+            <div class="col-lg-6 store-info">
+                <p>
+                <p>YOU CAN HAVE A MANUAL MENU HERE</p>
+                </p>
+            </div>
+            <div class="col-lg-6 search-container">
+                <a href="cart.html" class="bag"><span class="cart-count">(0)</span> Cart
+                </a>
+                <a class="account" href="login.html">
+                    <i class="glyphicon glyphicon-user"></i>
+                    My Account
+                </a>
+                <form role="search" action="/search" method="post">
+                    <div class="input-group search">
+                        <input class="form-control" name="Search" placeholder="Search here.." type="text">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-smal">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
                     </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3><a href="#">Accessories</a></h3>
-                            <a href="#">Belts</a>
-                            <a href="#">Hats & Caps</a>
-                            <a href="#">Toboggans & Beanies</a>
-                            <a href="#">Scarfs & Wraps</a>
-                            <a href="#">Neck Gaiters</a>
-                            <a href="#">Gloves & Mittens</a>
-                            <a href="#">Socks</a>
-                            <a href="#">Jewelry</a>
-                            <a href="#">Wallets & Handbags</a>
-                            <a href="#">Sunglasses</a>
-                            <a href="#">Care Products</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Hunting</a></h3>
-                            <a href="#">Tops</a>
-                            <a href="#">Bottoms</a>
-                            <a href="#">Coats & Jackets</a>
-                            <a href="#">Hoodies & Sweatshirts</a>
-                            <a href="#">Base Layers</a>
-                            <a href="#">Vests</a>
-                            <a href="#">Fleece</a>
-                            <a href="#">Rainwear</a>
-                            <a href="#">Neck Gaiters</a>
-                            <a href="#">Bibs & Coveralls</a>
-                            <a href="#">Gloves</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Skiwear</a></h3>
-                            <a href="#">Coats & Jackets</a>
-                            <a href="#">Base Layers</a>
-                            <a href="#">Pants & Bibs</a>
-                            <a href="#">Toboggans & Beanies</a>
-                            <a href="#">Ski Goggles</a>
-                            <a href="#">Gloves & Liners</a>
-                            <a href="#">Fleece</a>
-                            <a href="#">Socks</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">Base Layers</a></h3>
-                            <a href="#">Tops</a>
-                            <a href="#">Bottoms</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3><a href="#">Hats & Caps</a></h3>
-                            <a href="#">Canady's</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Boonie Hats</a>
-                            <a href="#">Brimmed Hats</a>
-                            <a href="#">Ball Caps</a>
-                            <a href="#">Trucker Caps</a>
-                            <a href="#">Toboggans & Beanies</a>
-                        </div>
-                        <div class="column">
-                            <h3><a href="#">T-Shirts</a></h3>
-                            <a href="#">Canady's</a>
-                            <a href="#">Long Sleeved</a>
-                            <a href="#">Short Sleeved</a>
-                        </div>
-                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="logorow" class="row container no-gutter">
+            <div class="col-lg-12 no-gutter header-middle">
+                <div class="col-md-2 col-sm-2 col-xs-4 col-lg-2 logo-container">
+                    <p><a href="/"><img alt="Canady's Sport Center Logo"
+                                src="images/logos/canadys_boat_logo_white.png" /></a></p>
                 </div>
+
+                <div class="col-xs-12 col-lg-10 no-gutter" data-spy="affix" data-offset-top="150">
+                    <div class="affix-header-middle">
+                        <span class="fixed-logo col-lg-2">
+                            <p><a href="/"><img alt="Canady's Sport Center Logo"
+                                        src="images/logos/canadys_boat_logo_white.png" /></a></p>
+                        </span>
+
+                        <div class="col-lg-12 no-gutter nav-container">
+
+							<nav class="navbar navbar-default navbar-static">
+								<div class="navbar-header pull-left">
+									<button type="button" id="mobileMenu" class="navbar-toggle collapsed pull-left" data-toggle="collapse"
+										data-target="#navigation">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="collapse navbar-collapse" id="navigation">
+									<div class="mobile-account">
+										<a href="cart.html" class="bag"><span class="cart-count">(0)</span> Cart
+										</a>
+										<a class="account" href="login.html">
+											<i class="glyphicon glyphicon-user"></i>
+											<span class="acct-text">My Account</span>
+										</a>
+									</div>
+									<form role="search" action="/search" method="post" class="mobile-search">
+										<div class="input-group search">
+											<input class="form-control" name="Search" placeholder="Search here.." type="text">
+											<span class="input-group-btn">
+												<button type="submit" class="btn btn-smal">
+													<i class="glyphicon glyphicon-search"></i>
+												</button>
+											</span>
+										</div>
+									</form>
+
+									<ul class="nav navbar-nav">
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clothing</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="/custom/clothing-mens">Men's Clothing</a></li>
+														<li><a href="/custom/clothing-mens-pants">Pants & Shorts</a></li>
+														<li><a href="/custom/clothing-mens-shirts">Shirts & Tops</a></li>
+														<li><a href="/custom/clothing-mens-coats">Coats & Jackets</a></li>
+														<li><a href="/custom/clothing-mens-hoodies">Hoodies & Sweatshirts</a></li>
+														<li><a href="/custom/clothing-mens-base-layers">Base Layers</a></li>
+														<li><a href="/custom/clothing-mens-vests">Vests</a></li>
+														<li><a href="/custom/clothing-mens-fleece">Fleece</a></li>
+														<li><a href="/custom/clothing-mens-rainwear">Rainwear</a></li>
+														<li><a href="/custom/clothing-mens-t-shirts">T-Shirts</a></li>
+														<li><a href="/custom/clothing-mens-hunting">Hunting</a></li>
+														<li><a href="/custom/clothing-mens-canadys">Canady's Logo</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="/custom/clothing-womens">Women's Clothing</a></li>
+														<li><a href="/custom/clothing-womens-pants">Pants & Shorts</a></li>
+														<li><a href="/custom/clothing-womens-skirts">Skirts & Dresses</a></li>
+														<li><a href="/custom/clothing-womens-shirts">Shirts & Tops</a></li>
+														<li><a href="/custom/clothing-womens-coats">Coats & Jackets</a></li>
+														<li><a href="/custom/clothing-womens-hoodies">Hoodies & Sweatshirts</a></li>
+														<li><a href="/custom/clothing-womens-base-layers">Base Layers</a></li>
+														<li><a href="/custom/clothing-womens-vests">Vests</a></li>
+														<li><a href="/custom/clothing-womens-fleece">Fleece</a></li>
+														<li><a href="/custom/clothing-womens-rainwear">Rainwear</a></li>
+														<li><a href="/custom/clothing-womens-t-shirts">T-Shirts</a></li>
+														<li><a href="/custom/clothing-womens-hunting">Hunting</a></li>
+														<li><a href="/custom/clothing-womens-canadys">Canady's Logo</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="/custom/clothing-kids">Kids' Clothing</a></li>
+														<li><a href="/custom/clothing-kids-shirts">Shirts & Tops</a></li>
+														<li><a href="/custom/clothing-kids-coats">Coats & Jackets</a></li>
+														<li><a href="/custom/clothing-kids-hoodies">Hoodies & Sweatshirts</a></li>
+														<li><a href="/custom/clothing-kids-base-layers">Base Layers</a></li>
+														<li><a href="/custom/clothing-kids-fleece">Fleece</a></li>
+														<li><a href="/custom/clothing-kids-rainwear">Rainwear</a></li>
+														<li><a href="/custom/clothing-kids-hunting">Hunting</a></li>
+														<li><a href="/custom/clothing-kids-canadys">Canady's Logo</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="custom/clothing-pets">Pets' Clothing</a></li>
+														<li><a href="custom/clothing-pets-vests">Vests & Sweaters</a></li>
+														<li><a href="custom/clothing-pets-leashes">Leashes</a></li>
+														<li><a href="custom/clothing-pets-collars">Collars</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Accessories</a></li>
+														<li><a href="#">Belts</a></li>
+														<li><a href="#">Hats & Caps</a></li>
+														<li><a href="#">Toboggans & Beanies</a></li>
+														<li><a href="#">Scarfs & Wraps</a></li>
+														<li><a href="#">Neck Gaiters</a></li>
+														<li><a href="#">Gloves & Mittens</a></li>
+														<li><a href="#">Socks</a></li>
+														<li><a href="#">Jewelry</a></li>
+														<li><a href="#">Wallets & Handbags</a></li>
+														<li><a href="#">Sunglasses</a></li>
+														<li><a href="#">Care Products</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Hunting</a></li>
+														<li><a href="#">Tops</a></li>
+														<li><a href="#">Bottoms</a></li>
+														<li><a href="#">Coats & Jackets</a></li>
+														<li><a href="#">Hoodies & Sweatshirts</a></li>
+														<li><a href="#">Base Layers</a></li>
+														<li><a href="#">Vests</a></li>
+														<li><a href="#">Fleece</a></li>
+														<li><a href="#">Rainwear</a></li>
+														<li><a href="#">Neck Gaiters</a></li>
+														<li><a href="#">Bibs & Coveralls</a></li>
+														<li><a href="#">Gloves</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Skiwear</a></li>
+														<li><a href="#">Coats & Jackets</a></li>
+														<li><a href="#">Base Layers</a></li>
+														<li><a href="#">Pants & Bibs</a></li>
+														<li><a href="#">Toboggans & Beanies</a></li>
+														<li><a href="#">Ski Goggles</a></li>
+														<li><a href="#">Gloves & Liners</a></li>
+														<li><a href="#">Fleece</a></li>
+														<li><a href="#">Socks</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Base Layers</a></li>
+														<li><a href="#">Tops</a></li>
+														<li><a href="#">Bottoms</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Hats & Caps</a></li>
+														<li><a href="#">Canady's Logo</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Boonie Hats</a></li>
+														<li><a href="#">Brimmed Hats</a></li>
+														<li><a href="#">Ball Caps</a></li>
+														<li><a href="#">Trucker Caps</a></li>
+														<li><a href="#">Toboggans & Beanies</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">T-Shirts</a></li>
+														<li><a href="#">Long Sleeved</a></li>
+														<li><a href="#">Short Sleeved</a></li>
+														<li><a href="#">Canady's Logo</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Footwear</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Men's Footwear</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Hiking</a></li>
+														<li><a href="#">Casual</a></li>
+														<li><a href="#">Work</a></li>
+														<li><a href="#">Rubber</a></li>
+														<li><a href="#">Snake Boots & Chaps</a></li>
+														<li><a href="#">Winter</a></li>
+														<li><a href="#">Slippers</a></li>
+														<li><a href="#">Waders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Women's Footwear</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Hiking</a></li>
+														<li><a href="#">Casual</a></li>
+														<li><a href="#">Rubber</a></li>
+														<li><a href="#">Winter</a></li>
+														<li><a href="#">Slippers</a></li>
+														<li><a href="#">Waders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Kids' Footwear</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Rubber</a></li>
+														<li><a href="#">Winter</a></li>
+														<li><a href="#">Waders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Hunting</a></li>
+														<li><a href="#">Waders</a></li>
+														<li><a href="#">Snake Boots & Chaps</a></li>
+														<li><a href="#">Rubber</a></li>
+														<li><a href="#">Hunting</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Waders</a></li>
+														<li><a href="#">Chest</a></li>
+														<li><a href="#">Hip</a></li>
+														<li><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Socks</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Ski</a></li>
+														<li><a href="#">Insulated</a></li>
+														<li><a href="#">Wool</a></li>
+														<li><a href="#">Liners</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hunting</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Archery</a></li>
+														<li><a href="#">Arrows & Accessories</a></li>
+														<li><a href="#">Broadheads & Field Points</a></li>
+														<li><a href="#">Crossbows & Accessories</a></li>
+														<li><a href="#">Releases</a></li>
+														<li><a href="#">Rests</a></li>
+														<li><a href="#">Sights</a></li>
+														<li><a href="#">Stabilizers</a></li>
+														<li><a href="#">Targets</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Optics</a></li>
+														<li><a href="#">Binoculars</a></li>
+														<li><a href="#">Rangefinders</a></li>
+														<li><a href="#">Scopes</a></li>
+														<li><a href="#">Sights & Mounts</a></li>
+														<li><a href="#">Rings & Bases</a></li>
+														<li><a href="#">Night Vision</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Knives & Tools</a></li>
+														<li><a href="#">Knives</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Everyday Carry</a></li>
+														<li><a href="#">Collectibles</a></li>
+														<li><a href="#">Saws, Machetes & Axes</a></li>
+														<li><a href="#">Tools</a></li>
+														<li><a href="#">Sharpeners</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Accessories</a></li>
+														<li><a href="#">Game Totes</a></li>
+														<li><a href="#">Scents & Scent Blockers</a></li>
+														<li><a href="#">Stools & Chairs</a></li>
+														<li><a href="#">Hand & Foot Warmers</a></li>
+														<li><a href="#">Safety & Survival</a></li>
+														<li><a href="#">Repellents</a></li>
+														<li><a href="#">Gun Slings</a></li>
+														<li><a href="#">Lifestyle</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Game Calls</a></li>
+														<li><a href="#">Deer</a></li>
+														<li><a href="#">Turkey</a></li>
+														<li><a href="#">Waterfowl</a></li>
+														<li><a href="#">Predator</a></li>
+														<li><a href="#">Small Game</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+													<li class="dropdown-header"><a href="#">Decoys</a></li>
+														<li><a href="#">Decoys</a></li>
+														<li><a href="#">Bags</a></li>
+														<li><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Bags, Packs & Cases</a></li>
+														<li><a href="#">Blind Bags</a></li>
+														<li><a href="#">Wader Bags</a></li>
+														<li><a href="#">Duffle Bags</a></li>
+														<li><a href="#">Decoy Bags</a></li>
+														<li><a href="#">Backpacks</a></li>
+														<li><a href="#">Cases</a></li>
+														<li><a href="#">Dry Boxes</a></li>
+														<li><a href="#">Shell Holders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Dog Training</a></li>
+														<li><a href="#">Safety Vests</a></li>
+														<li><a href="#">Training Collars</a></li>
+														<li><a href="#">Dummies</a></li>
+														<li><a href="#">Whistles</a></li>
+														<li><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Blinds & Treestands</a></li>
+														<li><a href="#">Blinds</a></li>
+														<li><a href="#">Treestands</a></li>
+														<li><a href="#">Stools & Chairs</a></li>
+														<li><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Electronics</a></li>
+														<li><a href="#">Cameras & Accessories</a></li>
+														<li><a href="#">Lights</a></li>
+														<li><a href="#">Batteries</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Apparel</a></li>
+														<li><a href="#">Men's Clothing</a></li>
+														<li><a href="#">Men's Footwear</a></li>
+														<li><a href="#">Women's Clothing</a></li>
+														<li><a href="#">Women's Footwear</a></li>
+														<li><a href="#">Kids' Clothing</a></li>
+														<li><a href="#">Kids' Footwear</a></li>
+														<li><a href="#">Waders</a></li>
+													</ul>
+												</li>
+											</ul>										
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shooting</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Firearms</a></li>
+														<li><a href="#">Handguns</a></li>
+														<li><a href="#">Rifles</a></li>
+														<li><a href="#">Shotguns</a></li>														
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Ammunition</a></li>
+														<li><a href="#">Handgun</a></li>
+														<li><a href="#">Rifle</a></li>
+														<li><a href="#">Shotgun</a></li>
+														<li><a href="#">Storage</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Optics</a></li>
+														<li><a href="#">Binoculars</a></li>
+														<li><a href="#">Rangefinders</a></li>
+														<li><a href="#">Scopes</a></li>
+														<li><a href="#">Sights & Mounts</a></li>
+														<li><a href="#">Rings & Bases</a></li>
+														<li><a href="#">Night Vision</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Accessories</a></li>
+														<li><a href="#">Gun Cleaning</a></li>
+														<li><a href="#">Eye & Ear Protection</a></li>
+														<li><a href="#">Targets</a></li>
+														<li><a href="#">Gun Slings</a></li>
+														<li><a href="#">Shell Holders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Gun Safety & Storage</a></li>
+														<li><a href="#">Safes & Vaults</a></li>
+														<li><a href="#">Safe Accessories</a></li>
+														<li><a href="#">Concealment</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Bags, Packs & Cases</a></li>
+														<li><a href="#">Duffle Bags</a></li>
+														<li><a href="#">Backpacks</a></li>
+														<li><a href="#">Cases</a></li>
+														<li><a href="#">Dry Boxes</a></li>
+														<li><a href="#">Shell Holders</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Parts</a></li>
+														<li><a href="#">Chokes</a></li>
+														<li><a href="#">Magazines</a></li>
+														<li><a href="#">Sights</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Knives & Tools</a></li>
+														<li><a href="#">Knives</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Everyday Carry</a></li>
+														<li><a href="#">Collectibles</a></li>
+														<li><a href="#">Saws, Machetes & Axes</a></li>
+														<li><a href="#">Tools</a></li>
+														<li><a href="#">Sharpeners</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Apparel</a></li>
+														<li><a href="#">Shirts</a></li>
+														<li><a href="#">Vests</a></li>
+														<li><a href="#">Gloves</a></li>
+														<li><a href="#">Ear & Eye Protection</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Archery</a></li>
+														<li><a href="#">Arrows & Accessories</a></li>
+														<li><a href="#">Broadheads & Field Points</a></li>
+														<li><a href="#">Crossbows & Accessories</a></li>
+														<li><a href="#">Releases</a></li>
+														<li><a href="#">Rests</a></li>
+														<li><a href="#">Sights</a></li>
+														<li><a href="#">Stabilizers</a></li>
+														<li><a href="#">Targets</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Personal Defense</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outdoor</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Outdoor Living</a></li>
+														<li><a href="#">Cookware</a></li>
+														<li><a href="#">Drinkware</a></li>
+														<li><a href="#">Utensils</a></li>
+														<li><a href="#">Bed & Bath</a></li>
+														<li><a href="#">Coolers & Accessories</a></li>
+														<li><a href="#">Grills & Cookers</a></li>
+														<li><a href="#">Firepits & Heaters</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Outdoor Recreation</a></li>
+														<li><a href="#">Stools & Chairs</a></li>
+														<li><a href="#">Outdoor Cooking</a></li>
+														<li><a href="#">Coolers & Accessories</a></li>
+														<li><a href="#">Pool & Beach</a></li>
+														<li><a href="#">Repellents</a></li>
+														<li><a href="#">Hydration</a></li>
+														<li><a href="#">Rain Gear</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Water Leisure</a></li>
+														<li><a href="#">Sunglasses</a></li>
+														<li><a href="#">Clothing</a></li>
+														<li><a href="#">Towels & Blankets</a></li>
+														<li><a href="#">Floats & Toys</a></li>
+														<li><a href="#">Buckets</a></li>
+														<li><a href="#">Coolers & Accessories/a></li>
+														<li><a href="#">Hydration</a></li>
+														<li><a href="#">Koozies</a></li>
+														<li><a href="#">Repellents</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Luggage & Travel</a></li>
+														<li><a href="#"></a>Hunting</li>
+														<li><a href="#"></a>Duffle Bags</li>
+														<li><a href="#">Tote & Utility Bags</a></li>
+														<li><a href="#">Backpacks/a></li>
+														<li><a href="#">Briefcases</a></li>
+														<li><a href="#">Luggage</a></li>
+														<li><a href="#">Wallets & Handbags</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Knives & Tools</a></li>
+														<li><a href="#">Knives</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Everyday Carry</a></li>
+														<li><a href="#">Collectibles</a></li>
+														<li><a href="#">Saws, Machetes & Axes</a></li>
+														<li><a href="#">Tools</a></li>
+														<li><a href="#">Sharpeners</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Electronics</a></li>
+														<li><a href="#">Headlamps</a></li>
+														<li><a href="#">Flashlights</a></li>
+														<li><a href="#">Lanterns</a></li>
+														<li><a href="#">Batteries</a></li>
+														<li><a href="#">Spotlights</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Coolers & Accessories</a></li>
+														<li><a href="#">Coolers</a></li>
+														<li><a href="#">Koozies</a></li>
+														<li><a href="#">Accessories</a></li>
+														<li><a href="#">Drinkware</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Pet Gear</a></li>
+														<li><a href="#">Bedding</a></li>
+														<li><a href="#">Bowls</a></li>
+														<li><a href="#">Leashes</a></li>
+														<li><a href="#">Collars</a></li>
+														<li><a href="#">Clothing</a></li>
+														<li><a href="#">Dog Training</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home & Gifts</a>
+											<ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Home Goods</a></li>
+														<li><a href="#">Cookware</a></li>
+														<li><a href="#">Drinkware</a></li>
+														<li><a href="#">Utensils</a></li>
+														<li><a href="#">Bed & Bath</a></li>
+														<li><a href="#">Safes & Vaults</a></li>
+														<li><a href="#">Decor</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Luggage & Travel</a></li>
+														<li><a href="#"></a>Hunting</li>
+														<li><a href="#"></a>Duffle Bags</li>
+														<li><a href="#">Tote & Utility Bags</a></li>
+														<li><a href="#">Backpacks/a></li>
+														<li><a href="#">Briefcases</a></li>
+														<li><a href="#">Luggage</a></li>
+														<li><a href="#">Wallets & Handbags</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Hats & Caps</a></li>
+														<li><a href="#">Canady's Logo</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Boonie Hats</a></li>
+														<li><a href="#">Brimmed Hats</a></li>
+														<li><a href="#">Ball Caps</a></li>
+														<li><a href="#">Trucker Caps</a></li>
+														<li><a href="#">Toboggans & Beanies</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Personal Accessories</a></li>
+														<li><a href="#">Sunglasses</a></li>
+														<li><a href="#">Belts</a></li>
+														<li><a href="#">Wallets & Money Clips</a></li>
+														<li><a href="#">Handbags</a></li>
+														<li><a href="#">Jewelry</a></li>
+														<li><a href="#">Flashlights</a></li>
+														<li><a href="#">Pocket Knives</a></li>
+														<li><a href="#">Pepper Spray</a></li>
+														<li><a href="#">Lifestyle</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Coolers & Accessories</a></li>
+														<li><a href="#">Coolers</a></li>
+														<li><a href="#">Koozies</a></li>
+														<li><a href="#">Accessories</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Drinkware</a></li>
+														<li><a href="#">Cups, Mugs & Tumblers</a></li>
+														<li><a href="#">Flasks</a></li>
+														<li><a href="#">Koozies</a></li>
+														<li><a href="#">Thermoses</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Canady's Logo</a></li>
+														<li><a href="#"></a>Hats & Caps</li>
+														<li><a href="#">Apparel</a></li>
+														<li><a href="#">Lifestyle</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Gift Ideas</a></li>
+														<li><a href="#">Gift Certificates</a></li>
+														<li><a href="#">Under $100</a></li>
+														<li><a href="#">Under $50</a></li>
+														<li><a href="#">Under $25</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Knives & Tools</a></li>
+														<li><a href="#">Knives</a></li>
+														<li><a href="#">Hunting</a></li>
+														<li><a href="#">Everyday Carry</a></li>
+														<li><a href="#">Collectibles</a></li>
+														<li><a href="#">Saws, Machetes & Axes</a></li>
+														<li><a href="#">Tools</a></li>
+														<li><a href="#">Sharpeners</a></li>
+													</ul>
+												</li>
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Pets</a></li>
+														<li><a href="#">Bedding</a></li>
+														<li><a href="#">Bowls</a></li>
+														<li><a href="#">Clothing</a></li>
+														<li><a href="#">Leashes</a></li>
+														<li><a href="#">Collars</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown nav-level-1">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Marine</a>
+											<!-- <ul class="dropdown-menu row nav-level-2">
+												<li class="col-sm-12 col-md-3 col-lg-3 nav-level-3">
+													<ul>
+														<li class="dropdown-header"><a href="#">Firearms</a></li>
+														<li><a href="#"></a></li>
+													</ul>
+												</li>
+											</ul> -->
+										</li>
+									</ul>
+								</div><!-- /.nav-collapse -->
+							</nav>
+
+                        </div>
+                    </div>
+                </div> <!-- /#mainnavigation -->
+
             </div>
-            <div class="dropdown">
-                <a href="#">Footwear</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3>Men's Footwear</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Hiking</a>
-                            <a href="#">Casual</a>
-                            <a href="#">Work</a>
-                            <a href="#">Rubber</a>
-                            <a href="#">Snake Boots & Chaps</a>
-                            <a href="#">Winter</a>
-                            <a href="#">Slippers</a>
-                            <a href="#">Waders</a>
-                        </div>
-                        <div class="column">
-                            <h3>Women's Footwear</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Hiking</a>
-                            <a href="#">Casual</a>
-                            <a href="#">Rubber</a>
-                            <a href="#">Winter</a>
-                            <a href="#">Slippers</a>
-                            <a href="#">Waders</a>
-                        </div>
-                        <div class="column">
-                            <h3>Kids' Footwear</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Rubber</a>
-                            <a href="#">Winter</a>
-                            <a href="#">Waders</a>
-                        </div>
-                        <div class="column">
-                            <h3>Hunting</h3>
-                            <a href="#">Waders</a>
-                            <a href="#">Snake Boots & Chaps</a>
-                            <a href="#">Rubber</a>
-                            <a href="#">Hunting</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Waders</h3>
-                            <a href="#">Chest</a>
-                            <a href="#">Hip</a>
-                            <a href="#">Accessories</a>
-                        </div>
-                        <div class="column">
-                            <h3>Socks</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Ski</a>
-                            <a href="#">Insulated</a>
-                            <a href="#">Wool</a>
-                            <a href="#">Liners</a>
-                        </div>
-                        <div class="column">
-                            <h3>Accessories</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Hunting</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3>Archery</h3>
-                            <a href="#">Arrows & Accessories</a>
-                            <!-- <a href="#">Bows</a> -->
-                            <a href="#">Broadheads & Field Points</a>
-                            <!-- <a href="#">Cases</a> -->
-                            <a href="#">Crossbows & Accessories</a>
-                            <!-- <a href="#">Gloves</a> -->
-                            <!-- <a href="#">Quivers</a> -->
-                            <a href="#">Releases</a>
-                            <a href="#">Rests</a>
-                            <a href="#">Sights</a>
-                            <a href="#">Stabilizers</a>
-                            <!-- <a href="#">Strings & Accessories</a> -->
-                            <a href="#">Targets</a>
-                            <!-- <a href="#" class="question">Should we collapse any of these?</a> -->
-                        </div>
-                        <div class="column">
-                            <h3>Optics</h3>
-                            <a href="#">Binoculars</a>
-                            <a href="#">Rangefinders</a>
-                            <a href="#">Scopes</a>
-                            <a href="#">Sights & Mounts</a>
-                            <a href="#">Rings & Bases</a>
-                            <a href="#">Night Vision</a>
-                        </div>
-                        <div class="column">
-                            <h3>Knives & Tools</h3>
-                            <a href="#">Knives</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Everyday Carry</a>
-                            <a href="#">Collectibles</a>
-                            <a href="#">Saws, Machetes & Axes</a>
-                            <a href="#">Tools</a>
-                            <a href="#">Sharpeners</a>
-                        </div>
-                        <div class="column">
-                            <h3>Accessories</h3>
-                            <a href="#">Game Totes</a>
-                            <a href="#">Scents & Scent Blockers</a>
-                            <a href="#">Stools & Chairs</a>
-                            <a href="#">Hand & Foot Warmers</a>
-                            <a href="#">Safety & Survival</a>
-                            <a href="#">Repellents</a>                            
-                            <a href="#">Gun Slings</a>
-                            <a href="#">Lifestyle</a>
-                        </div>
-                    </div>
-                    <!-- <a href="#">Trail Cameras & Accessories</a> -->
-                    <div class="row">
-                        <div class="column">
-                            <h3>Game Calls</h3>
-                            <a href="#">Deer</a>
-                            <a href="#">Turkey</a>
-                            <a href="#">Waterfowl</a>
-                            <a href="#">Predator</a>
-                            <a href="#">Small Game</a>
-                        </div>
-                        <div class="column">
-                            <h3>Decoys</h3>
-                            <a href="#">Decoys</a>
-                            <a href="#">Bags</a>
-                            <a href="#">Accessories</a>
-                            <!-- <a href="#" class="question">Should we break out by game type?</a> -->
-                        </div>
-                        <div class="column">
-                            <h3>Bags, Packs & Cases</h3>
-                            <a href="#">Blind Bags</a>
-                            <a href="#">Wader Bags</a>
-                            <a href="#">Duffle Bags</a>
-                            <a href="#">Decoy Bags</a>
-                            <a href="#">Backpacks</a>
-                            <a href="#">Cases</a>
-                            <a href="#">Dry Boxes</a>
-                            <a href="#">Shell Holders</a>
-                        </div>
-                        <div class="column">
-                            <h3>Dog Training</h3>
-                            <a href="#">Safety Vests</a>
-                            <a href="#">Training Collars</a>
-                            <a href="#">Dummies</a>
-                            <a href="#">Whistles</a>
-                            <a href="#">Accessories</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Blinds & Treestands</h3>
-                            <a href="#">Blinds</a>
-                            <a href="#">Treestands</a>
-                            <a href="#">Stools & Chairs</a>
-                            <a href="#">Accessories</a>
-                        </div>
-                        <div class="column">
-                            <h3>Electronics</h3>
-                            <a href="#">Trail Cameras & Accessories</a>
-                            <a href="#">Lights</a>
-                            <a href="#">Batteries</a>
-                        </div>
-                        <div class="column">
-                            <h3>Apparel</h3>
-                            <a href="#">Men's Clothing</a>
-                            <a href="#">Men's Footwear</a>
-                            <a href="#">Women's Clothing</a>
-                            <a href="#">Women's Footwear</a>
-                            <a href="#">Kids' Clothing</a>
-                            <a href="#">Kids' Footwear</a>
-                            <a href="#">Waders</a>
-                        </div>
-                    </div>                        
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Shooting</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3>Firearms</h3>
-                            <a href="#">Handguns</a>
-                            <a href="#">Rifles</a>
-                            <a href="#">Shotguns</a>
-                        </div>
-                        <div class="column">
-                            <h3>Ammunition</h3>
-                            <a href="#">Handgun</a>
-                            <a href="#">Rifle</a>
-                            <a href="#">Shotgun</a>
-                            <a href="#">Storage</a>
-                        </div>
-                        <div class="column">
-                            <h3>Optics</h3>
-                            <a href="#">Binoculars</a>
-                            <a href="#">Rangefinders</a>
-                            <a href="#">Scopes</a>
-                            <a href="#">Sights & Mounts</a>
-                            <a href="#">Rings & Bases</a>
-                            <a href="#">Night Vision</a>
-                        </div>
-                        <div class="column">
-                            <h3>Accessories</h3>
-                            <a href="#">Gun Cleaning</a>
-                            <a href="#">Eye & Ear Protection</a>
-                            <a href="#">Targets</a>
-                            <a href="#">Gun Slings</a>
-                            <a href="#">Shell Holders</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Gun Storage & Safety</h3>
-                            <a href="#">Safes & Vaults</a>
-                            <a href="#">Safe Accessories</a>
-                            <a href="#">Concealment</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Bags, Packs & Cases</h3>
-                            <a href="#">Duffle Bags</a>
-                            <a href="#">Backpacks</a>
-                            <a href="#">Cases</a>
-                            <a href="#">Dry Boxes</a>
-                            <a href="#">Shell Holders</a>
-                        </div>
-                        <div class="column">
-                            <h3>Parts</h3>
-                            <a href="#">Chokes</a>
-                            <a href="#">Magazines</a>
-                            <a href="#">Sights</a>
-                        </div>
-                        <div class="row">
-                            <div class="column">
-                                <h3>Knives & Tools</h3>
-                                <a href="#">Knives</a>
-                                <a href="#">Hunting</a>
-                                <a href="#">Everyday Carry</a>
-                                <a href="#">Collectibles</a>
-                                <a href="#">Saws, Machetes & Axes</a>
-                                <a href="#">Tools</a>
-                                <a href="#">Sharpeners</a>
-                            </div>
-                            <div class="column">
-                                <h3>Apparel</h3>
-                                <a href="#">Shirts</a>
-                                <a href="#">Vests</a>
-                                <a href="#">Gloves</a>
-                                <a href="#">Ear & Eye Protection</a>
-                            </div>
-                            <div class="column">
-                                <h3>Archery</h3>
-                                <a href="#">Arrows & Accessories</a>
-                                <a href="#">Bows</a>
-                                <a href="#">Broadheads & Field Points</a>
-                                <a href="#">Crossbows & Accessories</a>
-                                <a href="#">Releases</a>
-                                <a href="#">Rests</a>
-                                <a href="#">Sights</a>
-                                <a href="#">Stabilizers</a>
-                                <a href="#">Targets</a>
-                            </div>
-                            <div class="column">
-                                <h3>Personal Defense</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Outdoor</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3>Outdoor Living</h3>
-                            <a href="#">Cookware</a>
-                            <a href="#">Drinkware</a>
-                            <a href="#">Utensils</a>
-                            <a href="#">Bed & Bath</a>
-                            <a href="#">Coolers & Accessories</a>
-                            <a href="#">Grills & Cookers</a>
-                            <a href="#">Firepits & Heaters</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Outdoor Recreation</h3>
-                            <a href="#">Stools & Chairs</a>
-                            <a href="#">Outdoor Cooking</a>
-                            <a href="#">Coolers & Accessories</a>
-                            <a href="#">Pool & Beach</a>
-                            <a href="#">Repellents</a>
-                            <a href="#">Hydration</a>
-                            <a href="#">Rain Gear</a>
-                        </div>
-                        <div class="column">
-                            <h3>Water Leisure</h3>
-                            <a href="#">Sunglasses</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Towels & Blankets</a>
-                            <a href="#">Floats & Toys</a>
-                            <a href="#">Buckets</a>
-                            <a href="#">Coolers & Accessories</a>
-                            <a href="#">Hydration</a>
-                            <a href="#">Koozies</a>
-                            <a href="#">Repellents</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Luggage & Travel</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Duffle Bags</a>
-                            <a href="#">Tote & Utility Bags</a>
-                            <a href="#">Backpacks</a>
-                            <a href="#">Briefcases</a>
-                            <a href="#">Luggage</a>
-                            <a href="#">Wallets & Handbags</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Knives & Tools</h3>
-                            <a href="#">Knives</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Everyday Carry</a>
-                            <a href="#">Collectibles</a>
-                            <a href="#">Saws, Machetes & Axes</a>
-                            <a href="#">Tools</a>
-                            <a href="#">Sharpeners</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Electronics</h3>
-                            <a href="#">Headlamps</a>
-                            <a href="#">Flashlights</a>
-                            <a href="#">Lanterns</a>
-                            <a href="#">Batteries</a>
-                            <a href="#">Spotlights</a>
-                        </div>
-                        <div class="column">
-                            <h3>Coolers & Accessories</h3>
-                            <a href="#">Coolers</a>
-                            <a href="#">Koozies</a>
-                            <a href="#">Accessories</a>
-                            <a href="#">Drinkware</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Pet Gear</h3>
-                            <a href="#">Bedding</a>
-                            <a href="#">Bowls</a>
-                            <a href="#">Leashes</a>
-                            <a href="#">Collars</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Dog Training</a>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Home & Gifts</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <h3><a href="#">Hats & Caps</a></h3>
-                            <a href="#">Canady's</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Boonie Hats</a>
-                            <a href="#">Brimmed Hats</a>
-                            <a href="#">Ball Caps</a>
-                            <a href="#">Trucker Caps</a>
-                            <a href="#">Toboggans & Beanies</a>
-                        </div>
-                        <div class="column">
-                            <h3 class="question">Luggage & Travel</h3>
-                            <a href="#">Hunting</a>
-                            <a href="#">Duffle Bags</a>
-                            <a href="#">Tote & Utility Bags</a>
-                            <a href="#">Backpacks</a>
-                            <a href="#">Briefcases</a>
-                            <a href="#">Luggage</a>
-                            <a href="#">Wallets & Handbags</a>
-                        </div>
-                        <div class="column">
-                            <h3>Home Goods</h3>
-                            <a href="#">Cookware</a>
-                            <a href="#">Drinkware</a>
-                            <a href="#">Utensils</a>
-                            <a href="#">Bed & Bath</a>
-                            <a href="#">Safes & Vaults</a>
-                            <a href="#">Decor</a>
-                        </div>
-                        <div class="column">
-                            <h3>Personal Accessories</h3>
-                            <a href="#">Wallets & Money Clips</a>
-                            <a href="#">Sunglasses</a>
-                            <a href="#">Jewelry</a>
-                            <a href="#">Handbags</a>
-                            <a href="#">Belts</a>
-                            <a href="#">Flashlights</a>
-                            <a href="#">Pocket Knives</a>
-                            <a href="#">Pepper Spray</a>
-                            <a href="#">Novelties</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Drinkware</h3>
-                            <a href="#">Cups, Mugs & Tumblers</a>
-                            <a href="#">Flasks</a>
-                            <a href="#">Koozies</a>
-                            <a href="#">Thermoses</a>
-                        </div>
-                        <div class="column">
-                            <h3>Coolers & Accessories</h3>
-                            <a href="#">Coolers</a>
-                            <a href="#">Koozies</a>
-                            <a href="#">Accessories</a>
-                        </div>
-                        <div class="column">
-                            <h3>Knives & Tools</h3>
-                            <a href="#">Knives</a>
-                            <a href="#">Hunting</a>
-                            <a href="#">Utility</a>
-                            <a href="#">Collectibles</a>
-                            <a href="#">Everyday</a>
-                            <a href="#">Axes</a>
-                            <a href="#">Sharpeners</a>
-                            <a href="#">Tools</a>
-                        </div>
-                        <div class="column">
-                            <h3>Gift Ideas</h3>
-                            <a href="#">Gift Certificates</a>
-                            <a href="#">Under $100</a>
-                            <a href="#">Under $50</a>
-                            <a href="#">Under $25</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h3>Pets</h3>
-                            <a href="#">Bedding</a>
-                            <a href="#">Bowls</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Leashes</a>
-                            <a href="#">Collars</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#">Marine</a>
-                <div class="dropdown-content">
-                    <div class="row">
-                        <div class="column">
-                            <a href="#" class="question">Open to suggestions</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        </div>
+
+
+
     </header>
+
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/magiczoom.js"></script>
+    <script>
+
+        if (top != self) top.location.replace(self.location.href);
+    </script>
+
+    <!-- <script src="/range/js/jquery-ui-datepicker.min.js"></script>
+    <script src="/range/js/range.js"></script>
+    <script src="/range/js/vex.combined.js"></script> -->
+
+    <script>
+        $('.close-overlay').click(function () {
+            $(this).parent('.edit-mode-overlay').slideUp();
+        })
+
+        $('.edit-mode-box p').click(function () {
+            $('.edit-mode-overlay').slideDown();
+        });
+    </script>
+
+    <script>
+        $('#leftNav #side-bar ul li.checkbox a').on('click', function () {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            }
+            else {
+                $(this).addClass('active');
+            }
+        });
+    </script>
+
+    <!-- Modal -->
+    <div id="addressModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Address Update</h4>
+                </div>
+                <div class="modal-body">
+                    <p>We have found a more accurate shipping address based on the information you have provided. Do you
+                        want to use the following Shipping Address?</p>
+                    <div id="modal-address"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="modal-ok-btn">Yes, Update Address</button>
+                    <button type="button" class="btn btn-default" id="modal-no-btn" data-dismiss="modal">No,
+                        Thanks</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/owl.support.js"></script>
+    <script src="js/owl.support.modernizr.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.accordion.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('div.accordion-wrapper [data-accordion]').accordion({
+                transitionEasing: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+                singleOpen: true,
+                transitionSpeed: 300
+            });
+
+            function openAccordionStep(id) {
+                $('div.accordion-wrapper section#' + id + ' button[data-control=""]').trigger('click');
+            }
+            if (window.location.hash) {
+                $(window).load(function () {
+                    openAccordionStep(window.location.hash.replace('#', ''));
+                });
+            }
+        });
+
+        $(".tel-show").on("click", function () {
+            $(".timing-dropdown").slideToggle();
+        });
+
+        if (screen.width > 768) {
+            $(".dropdown-toggle").attr("data-toggle", "");
+            $('ul.nav li.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+            });
+        }
+
+        //EMAIL POPUP
+        $(function () {
+            if ($.cookie('test_status') != '1') {
+                setTimeout(function () {
+                    $('.email-popup, .popup-bg').fadeIn();
+                    jQuery.cookie('test_status', '1', { expires: 31 });
+                }, 3000);
+            }
+            $('.close-popup').click(function () {
+                $(this).parents('.email-popup').fadeOut();
+                $('.popup-bg').fadeOut();
+            });
+        });
+        $(document).click(function (e) {
+            if ($(e.target).parents(".email-popup").length === 0) {
+                $('.email-popup').fadeOut();
+                $('.popup-bg').fadeOut();
+            }
+        });
+
+        //LOAD & UNLOAD PRODUCT PROFILE MODAL
+        $("#productProfile").on("show.bs.modal", function (e) {
+            var link = $(e.relatedTarget);
+            console.log(link);
+            $(this).find(".modal-body").load(link.attr("href"));
+        });
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+
+        //--- FOR MENU ---
+        // if (window.matchMedia("(min-width: 992px)").matches) {
+        //     //--FIREARMS
+        //     $('#collapseDept0').css({ "width": "100%", "height": "auto" });
+        //     //$('#collapseTyps2collapseDept0').css({"width":"13%"});
+        //     $('#collapseDept1').css({ "width": "100%", "height": "auto" });
+        //     $('#collapseDept2').css({ "width": "100%", "height": "auto" });
+        //     $('#collapseDept3').css({ "width": "100%", "height": "auto" });
+        //     //$('#collapseTyps20collapseDept3').css({"width":"17%"});
+        //     $('#collapseDept4').css({ "width": "100%", "height": "auto" });
+        //     $('#collapseDept5').css({ "width": "100%", "height": "auto" });
+        //     $('#collapseDept6').css({ "width": "100%", "height": "auto" });
+        //     $('#collapseDept7').css({ "width": "12%", "height": "10rem" });
+        //     $('#collapseDept8').css({ "width": "31%", "height": "10rem" });
+        //     $('#collapseDept9').css({ "width": "19%", "height": "10rem" });
+        //     $('#collapseDept10').css({ "width": "23%", "height": "10rem" });
+        //     $('#collapseDept11').css({ "width": "35%", "height": "21rem" });
+        //     //$('#collapseTyps41collapseDept11').css({"width":"28%"});
+        //     //$('#collapseTyps42collapseDept11').css({"width":"32%"});
+        //     $('#collapseDept12').css({ "width": "35%", "height": "22rem" });
+        //     $('#collapseDept13').css({ "width": "99%", "height": "15rem" });
+        // }
+/*if (window.matchMedia("(max-width: 767px)").matches) {
+            //--FIREARMS
+            $('#collapseDept0').css({"width":"84.6%","height": "41rem"});
+            $('#collapseTyps0collapseDept0').css({"width":"100%"});
+            $('#collapseTyps1collapseDept0').css({"width":"100%"});
+            //----AMMUNITION AND RELOADIND
+            $('#collapseDept1').css({"width":"84.6%","height": "41rem"});
+            $('#collapseTyps2collapseDept1').css({"width":"100%"});
+            $('#collapseTyps3collapseDept1').css({"width":"100%"});
+            //----OPTICS AND SIGHTS
+            $('#collapseDept2').css({"width":"84.6%","height": "41rem"});
+            //$('#collapseTypscollapseDept2').css({"width":"49%"});
+            //----PARTS
+            $('#collapseDept3').css({"width":"84.6%","height": "41rem"});
+            $('#collapseTyps15collapseDept3').css({"width":"100%"});
+            $('#collapseTyps16collapseDept3').css({"width":"100%"});
+            $('#collapseTyps17collapseDept3').css({"width":"100%"});
+            //----APPAREL
+            $('#collapseDept4').css({"height": "41rem"});
+        
+            //----GEAR
+            $('#collapseDept5').css({"width":"84.6%","height": "41rem"});
+            $('#collapseTyps24collapseDept5').css({"width":"100%"});
+            $('#collapseTyps25collapseDept5').css({"width":"100%"});
+            $('#collapseTyps26collapseDept5').css({"width":"100%"});
+            $('#collapseTyps27collapseDept5').css({"width":"100%"});
+        }
+        */
+    </script>
+
+	<script>
+		if(screen.width > 992) {
+			$("li.dropdown.nav-level-1").hover(function () {
+				$(this).children(".nav-level-2").css("display", "flex");
+			})
+		}
+	</script>
+
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- <script defer src="navmenu.js"></script> -->
-<script>
-    $("nav .dropdown a:first-of-type:not('.dropdown-content a:first-of-type')").each(function (index) {
-        console.log(index, $(this).text())
-        $(this).addClass("custom-menu-option-with-subs");
-    })
-</script>
+
 </html>
