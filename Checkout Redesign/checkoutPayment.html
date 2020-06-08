@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/cf_scripts/cfform.js"></script>
+    <script type="text/javascript" src="js/cf_scripts/masks.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/checkout.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/checkout.js" type="text/javascript"></script>
+
+    <script src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+    // < !--
+        _CF_checkCFForm_1 = function(_CF_this) {
+            //reset on submit
+            _CF_error_exists = false;
+            _CF_error_messages = new Array();
+            _CF_error_fields = new Object();
+            _CF_FirstErrorField = null;
+
+            //form element First_Name required check
+            if (!_CF_hasValue(_CF_this['First_Name'], "TEXT", false)) {
+                _CF_onError(_CF_this, "First_Name", _CF_this['First_Name'].value, "Error in First_Name text.");
+                _CF_error_exists = true;
+            }
+
+            //form element Last_Name required check
+            if (!_CF_hasValue(_CF_this['Last_Name'], "TEXT", false)) {
+                _CF_onError(_CF_this, "Last_Name", _CF_this['Last_Name'].value, "Error in Last_Name text.");
+                _CF_error_exists = true;
+            }
+
+            //form element Address1 required check
+            if (!_CF_hasValue(_CF_this['Address1'], "TEXT", false)) {
+                _CF_onError(_CF_this, "Address1", _CF_this['Address1'].value, "Error in Address1 text.");
+                _CF_error_exists = true;
+            }
+
+            //form element City required check
+            if (!_CF_hasValue(_CF_this['City'], "TEXT", false)) {
+                _CF_onError(_CF_this, "City", _CF_this['City'].value, "Error in City text.");
+                _CF_error_exists = true;
+            }
+
+            //form element Zip required check
+            if (!_CF_hasValue(_CF_this['Zip'], "TEXT", false)) {
+                _CF_onError(_CF_this, "Zip", _CF_this['Zip'].value, "Error in Zip text.");
+                _CF_error_exists = true;
+            }
+
+            //form element Country required check
+            if (!_CF_hasValue(_CF_this['Country'], "SELECT", false)) {
+                _CF_onError(_CF_this, "Country", _CF_this['Country'].value, "Error in Country text.");
+                _CF_error_exists = true;
+            }
+
+
+            //display error messages and return success
+            if (_CF_error_exists) {
+                if (_CF_error_messages.length > 0) {
+                    // show alert() message
+                    _CF_onErrorAlert(_CF_error_messages);
+                    // set focus to first form error, if the field supports js focus().
+                    if (_CF_this[_CF_FirstErrorField].type == "text") { _CF_this[_CF_FirstErrorField].focus(); }
+
+                }
+                return false;
+            } else {
+                return true;
+            }
+        }
+    //-->
+    </script>
+
+    <link rel="stylesheet" href="css/sms-custom/buttons.css">
+    <link rel="stylesheet" href="css/sms-custom/headerFooter.css">
+    <link rel="stylesheet" href="css/sms-custom/general.css">
+    <link rel="stylesheet" href="css/sms-custom/products.css">
+    <link rel="stylesheet" href="css/sms-custom/cart.css">
+    
+    
+    <script defer src="js/sms-custom/checkoutRev.js"></script>
+    <link rel="stylesheet" href="css/sms-custom/checkout.css">
+    
+    <style>
+        button#tempIframeBtn {
+            position: relative;
+            left: 12px;
+            top: -107px;
+            background: transparent;
+            border: none;
+            color: transparent;
+            width: 191px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background: #f8f8f8;">
+
+    <div class="site-logo-container">
+        <div class="container">
+            <a href="/cart.cfm">
+                <p>
+                    <a href="/">
+                        <img alt="Canady's Sport Center Logo" src="images/logos/canadys_boat_logo_white.png" />
+                    </a>
+                </p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<div class="container no-banner checkout-section">
+    <div class="progress-track">
+        <ul class="progressbar">
+            <li class="completed">Contact</li>
+            <li class="completed">Shipping</li>
+            <li class="active">Payment</li>
+            <li class="not-completed">Order Confirmation</li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <section class="side-cart">
+            <p class="checkout-header right-checkout-header">Shopping Cart Contents</p>
+            <article>
+                <script>
+                    $(document).ready(function (c) {
+                        $('.close1').on('click', function (c) {
+                            $('.cart-header1').fadeOut('slow', function (c) {
+                                $('.cart-header1').remove();
+                            });
+                        });
+
+                        getTotal();
+                    });
+                </script>
+        
+                <div class="cart-header1 cart-item cart-product" style="position:relative">
+                    <div class="cart-sec">
+                        <div class="col-md-12 col-lg-12 cart-item summary">
+                            <div class="cart-item-img">
+                                <img class="ProductImage" src="images/products/Columbia/1534111-teal-main.jpg" />
+                            </div>
+                            <h3>Arcadia II Rain Jacket </span></h3>
+                            <div class="side-cart-toggle toggle-down"></div>
+                        </div>
+                        <div class="col-lg-12 cart-item-info">
+                            <p class="ch4_cartItemOptions">
+                                <span class="ch4_cartItemOption">
+                                    <span class="ch4_cartItemLabel">Style#:</span>&nbsp;
+                                    1534111</span>
+                                <span class="ch4_cartItemOption"><span class="ch4_cartItemLabel">Size:</span>&nbsp;
+                                </span>
+                                <span class="ch4_cartItemOption"><span class="ch4_cartItemLabel">Color:</span>&nbsp;TEAL</span>
+                            </p>
+                            <h4><span>$59.99</h4>
+                            <p class="qty">Qty :1</p>
+                        </div>
+                    </div>
+                    <div class="cart-sec">
+                        <div class="col-md-12 col-lg-12 cart-item summary">
+                            <div class="cart-item-img">
+                                <img class="ProductImage" src="images/products/Toadfish/TFCCOOLER-can-cooler-main.jpg" />
+                            </div>
+                            <h3>Toadfish Outfitters Non-Tipping Can Cooler</span></h3>
+                            <div class="side-cart-toggle toggle-down"></div>
+                        </div>
+                        <div class="col-lg-12 cart-item-info">
+                            <p class="ch4_cartItemOptions">
+                                <span class="ch4_cartItemOption">
+                                    <span class="ch4_cartItemLabel">Style#:</span>&nbsp;
+                                    TFCCOOLER</span>
+                                <span class="ch4_cartItemOption"><span class="ch4_cartItemLabel">Size:</span>&nbsp;
+                                </span>
+                                <span class="ch4_cartItemOption"><span class="ch4_cartItemLabel">Color:</span>&nbsp;TEAL</span>
+                            </p>
+                            <h4><span>$24.00</h4>
+                            <p class="qty">Qty :1</p>
+                        </div>
+                    </div>
+                </div>
+        
+        
+            </article>
+            <section id="checkout-step5">
+                <p class="checkout-header left-checkout-header">Order Details</p>
+                <p>Estimated Shipping <span>$0.00</p>
+                <p>Estimated Taxes <span>$0.00</p>
+                <h3>Total <span>$0.00</h3>
+            </section>
+        </section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#Add1").text(sessionStorage.getItem("address"));
+            let csz = sessionStorage.getItem("city") + ", " + sessionStorage.getItem("state") + "  " + sessionStorage.getItem("zipcode");
+            $("#CSZ").text(csz);
+        })
+    </script>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <h3 class="checkout-header">Payment</h3>
+        <div class="registration-form checkout-registration-form">
+            <div class="container">
+                <div class="form-group">
+                    <label for="same-as-shipping">
+                        <input type="checkbox" id="same-as-shipping" checked> Same as Shipping Address
+                    </label>
+                    <p id="Add1"></p>
+                    <p id="CSZ"></p>
+                    <script>
+                        $("#same-as-shipping").click(function () {
+                                console.log("same as shipping box unchecked");
+                                $("#CFForm_1").slideToggle();
+                            });
+                    </script>
+                </div>
+                <form name="CFForm_1" id="CFForm_1" action="checkoutStep4.html.cfm?u=new#step3" method="post" onsubmit="return _CF_checkCFForm_1(this)"><input name="Operation1" id="Operation1" type="hidden" value="updAddress" >
+                    <div class="form-group">
+                        <label for="FirstName">First Name</label>
+                        <input name="FirstName" id="FirstName" type="text" class="form-control" value="Shannon" />
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="LastName">Last Name</label>
+                        <input name="LastName" id="LastName" type="text" class="form-control" />
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Company">Company (optional):</label>
+                        <input name="Company" id="Company Name" type="text" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address1">Address:</label>
+                        <input name="address1" id="address1" type="text" />
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="City">City:</label>
+                        <input name="City" id="City" type="text" />
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="text-info">State:</label>
+                        <input type="text" name="state" id="state">
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="text-info">Zip Code:</label>
+                        <input type="number" name="Zip" id="Zip">
+                        <p class="form-error">&nbsp;</p>
+                    </div>
+                    
+                    <div class='infoInput '>
+                        <p>COUNTRY: </P>
+                        <div>
+                            <select name="Country" id="Country">
+                                <option selected="yes" value="US">US</option>
+                                <option value="CA">CA</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <p class="checkout-header left-checkout-header">Secure Checkout</p>
+                <!-- <a href="#step7"></a> -->
+                <div class="payment-container">
+                
+                    <!-- TEMPORARY - ONLY USING IMAGE & BUTTON TO MIMIC WORLDPAY IFRAME ON LOCAL MACHINE -->
+                    <img src="images/placeholders/WorldpayIframe.PNG" alt="TEMPORARY TO DISPLAY IFRAME">
+                    <!-- <iframe id="PMTiframe" style="width:400px;height:400px;"
+                        src="https://certtransaction.hostedpayments.com/?TransactionSetupID=4FC76656-CC8B-4078-B751-1E4193C306F6"
+                        name="PMTiframe" scrolling="no" frameborder="0">
+                    </iframe> -->
+                    <button id="tempIframeBtn">Process Transaction</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div id="copyright" class="col-md-12  col-sm-12 col-xs-12">
+            <p>&copy; 2020&nbsp;All Rights Reserved. <a href="https://www.celerant.com/cumulus-retail/"
+                    target="_blank">Ecommerce Site by Cumulus Retail</a></p>
+        </div>
+    </div>
+</footer>
