@@ -13,7 +13,7 @@ $(".container.no-banner.checkout-section").ready(function () {
 	// adjust field type to be mobile friendly
 	$(".loginCheckout > .col-md-6.log #login #Email").attr("type", "email");
 	// correcting typo (remove space between password and ?)
-	$(".checkout-section form#login a").text("Forgot Password?");
+	$(".checkout-section form#login a, .my_account form#login a:last-child").text("Forgot Password?");
 	// rewording "register new account" heading to remove word register and make it more inviting/personal
 	$(".col-md-6.login-right h3").each(function () {
 		if ($(this).text().toLowerCase() == "register a new account") {
@@ -70,7 +70,9 @@ $(".container.no-banner.checkout-section").ready(function () {
 	).on("blur", ".form-group input", function () {
 		validateField($(this).attr("id"), $(this).closest("form").attr("id"));
 	});
-
+	$(`.registration-form #registrationform .form-group input`).blur(function () {
+		validateField($(this).attr("id"), $(this).closest("form").attr("id"));
+	})
 	// formatting shipping options
 	if ($("#checkout-step4").length || $("#shipping-choices").length == 0) {
 		formatShipping();
@@ -104,7 +106,6 @@ function formatFields(selector) {
 				.children("input, select")
 				.attr("name");
 		}
-
 		if (fieldID == "Company") {
 			let companyLink = `<button class="show-company btn btn-link" role="link">Add a Company Name</button>`;
 			if ($(`#${fieldID}`).val()) { // if company null, add company; else view company
@@ -133,7 +134,7 @@ function formatFields(selector) {
 				"aria-required",
 				"true"
 			);
-			$(`${fieldID}`).attr("aria-describedby", `${fieldID}Help`);
+			$(`#${fieldID}`).attr("aria-describedby", `${fieldID}Help`);
 		}
 	});
 
@@ -215,9 +216,10 @@ function validateField(field, form) {
 				? "Please enter the shipping zip code."
 				: "Please enter your billing zip code.",
 		EmailBlank:
-			"Please enter the email address we should send your order confirmation to.",
-		PHONE1Blank:
-			"Please provide a phone number we may reach you at just in case we have questions.",
+			form == "registrationform"
+				? "Please enter your email address"
+				: "Please enter the email address we should send your order confirmation to.",
+		PHONE1Blank: "Please provide a phone number we may reach you at just in case we have questions.",
 		EmailBadFormat:
 			"Please enter your email address in the following format: someone@example.com",
 		PHONE1BadFormat:
