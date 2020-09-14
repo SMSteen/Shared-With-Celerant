@@ -164,12 +164,25 @@ js(".container.no-banner.checkout-section").ready(function ($) {
         $(".pay-now-btn button").unbind("click");
     }
 
+    // open/collapse billing/shipping forms post entry
     $("#checkout-step2 h5 > button").on("click", function () {
         $(this).parent().siblings(".address-block").slideToggle();
         let showForm = $(this).attr("data-show");
         $(`#${showForm}`).toggle();
         // alignForms();
     });
+
+    // validate all entries of initial "registration" form; needed to make email address required
+    $("#registerButton").on("click", function (e) {
+        e.preventDefault();
+        let selector = $(this).parent("form").attr("id");
+        let formHasErrors = validateForm(selector)
+        if (formHasErrors) {
+            alert("Please correct any errors reflected in red.");
+        } else {
+            $(`#${selector}`).submit();
+        }
+    })
 });
 
 // determine which shipping option chosen
@@ -248,7 +261,7 @@ function formatFields(selector) {
     );
     js("input#Zip").attr({
         inputmode: "numeric",
-        pattern: "\\d{5}(?:[-\\s]\\d${4})?",
+        pattern: "\\d{5}(?:[-\\s]\\d{4})?",
     });
     js("input#PHONE1").attr("type", "tel");
     js("input#PHONE1 + .help-block").text(
@@ -401,6 +414,19 @@ function validateField(field, form) {
     }
 }
 
+// validate entire form (in the event user does not touch each form field individually)
+function validateForm(selector) {
+    let formHasErrors = false;
+    let action = js(`#${selector}`).attr("action");
+    js(`#${selector} .form-group input:not(#Company)`).each(function () {
+        validateField(js(this).attr("id"), js(this).closest("form").attr("id"));
+        if (!js(this).val().length) {
+            formHasErrors = true;
+        }
+    });
+    return formHasErrors;
+}
+
 // helper function to determine if value is null/undefined
 function hasValue(value) {
     return value !== undefined && value !== "" ? value : false;
@@ -408,12 +434,15 @@ function hasValue(value) {
 
 // new function to override checkout.js checkAddress IIFE so only called when invoked
 function checkAddressReplacement() {
-    js(".form-input").each(function () {
-        if (js(this).val().length) {
-            js("#checkout-step6").css("display", "block");
-            js(".pay-now-btn").hide();
+    let formHasErrors = false;
+    js(
+        "#CFForm_1 input:not(#Company), #CFForm_1 select, #CFForm_2 input:not(#Company), #CFForm_2 select"
+    ).each(function () {
+        if (!js(this).val().length) {
+            formHasErrors = true;
         }
     });
+    formHasErrors ? alert("Please correct any errors reflected in red.") : proceedToPay();
 }
 
 // put this on click of pay now button
@@ -426,10 +455,8 @@ function validateShipping() {
         js("#shipping-choices legend").attr("has-error");
         js("#shipping-choices legend").show();
     } else {
-        // checkAddress();
         // overriding checkout.js checkAddress IIFE
         checkAddressReplacement();
-        proceedToPay();
         js("#shipping-choices legend").attr("has-success");
         js("#shipping-choices legend").hide();
     }
@@ -472,7 +499,6 @@ function stripCharacters(val, desc) {
 function proceedToPay() {
     let currentShippingID = js(".shipotp:checked").val();
     if (currentShippingID) {
-        // window.location = "checkoutStep4Guest.html";
         window.location='/cartcheckout.cfm?ship_method_id='+currentShippingID+'+#step7';
     } else {
         alert("Please select a shipping method!");
