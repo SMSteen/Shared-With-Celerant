@@ -1,20 +1,20 @@
 <script>
-    if ($(window).width() < 991) {
-        $(".nav-level-1").click(function (e) {
-            let link = $(this).children(".dropdown-toggle");
-            let dropDown = $(this).children(".dropdown-menu.row.nav-level-2");
-            if (link.attr("aria-expanded") == false) {
-                link.attr("aria-expanded", true);
-                dropDown.css("display", "flex");
-            } else if (link.attr("aria-expanded") == true) {
-                link.attr("aria-expanded", false);
-                dropDown.css("display", "none");
-            }
-            return false;
-        });
-    }
-    // Revised "Go To Link" in submenu for New Nav Menu
-    $(".nav-level-3 a").click(function () {
-        window.location.href = $(this).attr("href");
-    });
+    $(document).ready(function () {
+        if ($(window).width() < 991) {
+            document.querySelectorAll('.nav-level-1').forEach(item => {
+                item.addEventListener('touchstart', event => {
+                    //handle movile nav menu display
+                    let link = item.children[0];
+                    let dropdown = item.children[1];
+                    if (link.getAttribute("aria-expanded") == "false") {
+                        link.setAttribute("aria-expanded", "true");
+                        dropdown.style.display = "flex";
+                    } else {
+                        link.setAttribute("aria-expanded", "false");
+                        dropdown.style.display = "none";
+                    }
+                })
+            })
+        }
+    })
 </script>
